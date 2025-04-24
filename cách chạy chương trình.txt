@@ -1,0 +1,11 @@
+cách chạy chương trình 
+web conprosys
+-setup thời gian
+--set up MQTT conection
+-set up service
+-log
+terminal
+-cd omron-vue
+-chạy mosquitto mosquitto -c "C:\Program Files\mosquitto\minimal.conf" -v
+web vuejs
+npm run dev
