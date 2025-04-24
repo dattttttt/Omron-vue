@@ -1,10 +1,17 @@
 # mqtt-logger/Dockerfile
-FROM python:3.11-slim
+FROM python:3.9-slim
 
 WORKDIR /app
+
+# Copy requirements.txt và cài đặt các phụ thuộc
+COPY requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy toàn bộ mã nguồn vào container
 COPY . .
 
-RUN pip install flask paho-mqtt flask-cors
-
+# Expose cổng ứng dụng
 EXPOSE 5000
-CMD ["python", "app.py"]
+
+# Khởi chạy ứng dụng
+CMD ["python", "mqtt_logger.py"]
