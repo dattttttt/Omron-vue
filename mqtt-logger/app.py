@@ -6,7 +6,7 @@ from datetime import datetime
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, origins=["http://localhost:5173"])
 CSV_FILE = 'sensor_data.csv'
 BROKER = 'mosquitto'
 PORT = 1883

@@ -1,3 +1,12 @@
+<script setup>
+console.log("✅ App.vue mounted!")
+
+import Header from './components/Header.vue'
+import Sidebar from './components/Sidebar.vue'
+import SensorDisplay from './components/SensorDisplay.vue'
+import Footer from './components/Footer.vue'
+</script>
+
 <template>
   <div class="flex flex-col h-screen">
     <Header />
@@ -10,10 +19,3 @@
     <Footer />
   </div>
 </template>
-
-<script setup>
-import Header from './components/Header.vue'
-import Sidebar from './components/Sidebar.vue'
-import SensorDisplay from './components/SensorDisplay.vue'
-import Footer from './components/Footer.vue'
-</script>

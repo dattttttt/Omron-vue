@@ -1,19 +1,15 @@
 # vue-app/Dockerfile
-FROM node:18-alpine
+FROM node:18-slim
 
 WORKDIR /app
 
-# Copy package.json và package-lock.json
+# ✅ Copy file cấu hình dependency
 COPY package*.json ./
 
-# Cài đặt các phụ thuộc
+# ✅ Cài thư viện đúng bên trong container
 RUN npm install
 
-# Copy toàn bộ mã nguồn vào container
+# ✅ Copy phần còn lại của code
 COPY . .
 
-# Expose cổng ứng dụng
-EXPOSE 5173
-
-# Khởi chạy ứng dụng
-CMD ["npm", "run", "dev", "--", "--host"]
+CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0", "--port", "5173"]

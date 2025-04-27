@@ -18,9 +18,7 @@ const parsedData = ref([])
 
 const fetchData = async () => {
   try {
-    // 🟡 Thêm dòng này để kiểm tra biến môi trường
-    console.log("🌐 Gọi API từ:", import.meta.env.VITE_API_URL)
-
+    console.log("📡 Đang gọi API:", import.meta.env.VITE_API_URL)
     const res = await fetch(`${import.meta.env.VITE_API_URL}/api/data`)
     const data = await res.json()
     rawData.value = data
